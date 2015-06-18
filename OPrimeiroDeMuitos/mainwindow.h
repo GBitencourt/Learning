@@ -3,7 +3,10 @@
 
 #include <QGraphicsView>
 
-class mainwindow : public QGraphicsView {};
+class mainwindow : public QGraphicsView {
+public:
+    mainwindow();
+};
 
 #endif // MAINWINDOW_H
 
