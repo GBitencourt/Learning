@@ -1,6 +1,9 @@
-#ifndef MAINWINDOW
-#define MAINWINDOW
-class mainwindow : public QGraphicsView
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-#endif // MAINWINDOW
+#include <QGraphicsView>
+
+class mainwindow : public QGraphicsView {};
+
+#endif // MAINWINDOW_H
 
