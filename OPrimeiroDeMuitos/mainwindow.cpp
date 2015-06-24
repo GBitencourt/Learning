@@ -40,7 +40,7 @@ mainwindow::mainwindow() {
         meuBrush.setStyle( Qt::SolidPattern );
             int y = ( pBL + pBC );
             if ( y % 2 != 0 ) {
-                QGraphicsEllipseItem *meuCirculo=minhacena->addEllipse( pBL*50,pBC*50,50,50 );
+                QGraphicsEllipseItem *meuCirculo=minhacena->addEllipse( (pBL*50)+5,(pBC*50)+5,40,40 );
                 meuBrush.setColor(branco);
                 meuCirculo->setBrush(meuBrush);
                 qDebug() << "-Peça Branca";
@@ -56,9 +56,10 @@ mainwindow::mainwindow() {
         meuBrush.setStyle( Qt::SolidPattern );
             int y = ( pPL + pPC );
             if ( y % 2 != 0 ) {
-                QGraphicsEllipseItem *meuCirculo=minhacena->addEllipse( pPL*50,pPC*50,50,50 );
+                QGraphicsEllipseItem *meuCirculo=minhacena->addEllipse( (pPL*50)+5,(pPC*50)+5,38,38 );
                 meuBrush.setColor(preto);
                 pen.setColor (branco);
+                pen.setWidth (2);
                 meuCirculo->setBrush(meuBrush);
                 meuCirculo->setPen(pen);
                 qDebug() << "-Peça Preta";
