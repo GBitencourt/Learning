@@ -1,5 +1,6 @@
 //Aula de c++ episódio atual: https://www.youtube.com/watch?v=t9iyPMyMjrg&list=PLesCEcYj003QTw6OhCOFb1Fdl8Uiqyrqo&index=16
 
+#include <QMouseEvent>
 #include <QDebug>
 #include "mainwindow.h"
 #include <QGraphicsScene>
@@ -66,4 +67,22 @@ mainwindow::mainwindow() {
             }
         }
     }
+}
+void mainwindow::mousePressEvent(QMouseEvent*ev){
+    QList<QGraphicsItem*> itensNoClique = scene()->items( mapToScene( ev->pos() ) );
+    for (int i = 0; i < itensNoClique.count();i++){
+        QGraphicsItem*itemAtual = itensNoClique[i];
+        QGraphicsEllipseItem*bola = dynamic_cast<QGraphicsEllipseItem*>( itemAtual );
+        if ( bola != false ) {
+            bola->setBrush(QBrush(QColor(Qt::red)));
+        }
+    }
+    //qDebug() << "Na Janela:" << ev->pos() << "Na cena" << mapToScene(ev->pos());
+    qDebug() << "Click";
+}
+void mainwindow::mouseMoveEvent(QMouseEvent*ev){
+    qDebug() << "Arrasta";
+}
+void mainwindow::mouseReleaseEvent(QMouseEvent*ev){
+    qDebug() << "Solta";
 }
